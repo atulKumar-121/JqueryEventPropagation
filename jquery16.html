@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+</head>
+<body>
+
+ <h1>Event Propagation</h1>
+<a href="https://www.google.com/" target="_blank" class="linkmod">Click me </a>
+<p>Click me to see<span> Stop Propagation</span></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+ <script>
+  $("a").click(function(e){
+    e.preventDefault();
+	console.log("Is Default Prevented",e.isDefaultPrevented());
+  });
+  $("span").click(function(e){
+  alert("stop Propagation");
+  e.stopPropagation();
+  console.log("Is Propagation Stopped",e.isPropagationStopped());
+  
+  });
+  
+  $("p").click(function(e){
+  alert("Hie");
+  
+  });
+	
+
+
+
+
+</script>
+</body>
+</html>
